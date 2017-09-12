@@ -3,14 +3,15 @@
 #=set_variable
 #================================
 source /home/oracle/.bash_profile
-export ORACLE_SID=PROD
+ORACLE_SID=PROD
 bdate=$(date +"%d_%m_%Y")
 mkdir -pv /u03/backup/${ORACLE_SID}/${bdate}
 tapedir=/u03/tape/${ORACLE_SID}
 backupdir=/u03/backup/${ORACLE_SID}/${bdate}
 logdir=/home/oracle/scripts/logs
+#mkdir -p /home/oracle/scripts/logs/arch
 rezserver=ip_address_rez_server
-export bdate tapedir backupdir logdir rezserver
+export ORACLE_SID bdate tapedir backupdir logdir rezserver
 #=================================
 #=show start time rman backup job
 #=================================
@@ -45,7 +46,7 @@ find ${logdir}/arch/ -name "*.log" -type f -exec gzip -v {} \;
 #=================================
 #=scp_to_standby server
 #=================================
-rsync -avz --progress --ignore-existing /u03/tape/* ${rezserver}:/${tapedir}/
+rsync -avz --ignore-existing ${tapedir}/* ${rezserver}:/${tapedir}/
 #=================================
 #=show finish time rman backup job
 #=================================
