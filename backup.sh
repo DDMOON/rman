@@ -9,7 +9,7 @@ mkdir -pv /u03/backup/${ORACLE_SID}/${bdate}
 tapedir=/u03/tape/${ORACLE_SID}
 backupdir=/u03/backup/${ORACLE_SID}/${bdate}
 logdir=/home/oracle/scripts/logs
-#mkdir -p /home/oracle/scripts/logs/arch
+#mkdir -pv /home/oracle/scripts/logs/arch
 rezserver=ip_address_rez_server
 export ORACLE_SID bdate tapedir backupdir logdir rezserver
 #=================================
