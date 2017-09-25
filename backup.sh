@@ -31,6 +31,8 @@ EOF
 #=show finish time rman backup job
 #=================================
 echo "$(date +"%Y/%m/%d|%H:%M") :: Finish backup" >> ${logdir}/${ORACLE_SID}_backup_${bdate}.log
+#resync rman catalog==============
+#echo 'resync catalog;' | rman target / catalog rman/rman_catalog_pwd@RMAN
 #================================
 #=create_links, chmod backup
 #================================
