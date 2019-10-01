@@ -1,2 +1,3 @@
 # rman
-scripts and commands for oracle RMAN
+scripts for oracle RMAN
+rman commands
