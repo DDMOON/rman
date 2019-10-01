@@ -1,2 +1,3 @@
-# rman
-scripts and commands for oracle RMAN
+# cкрипты и команды для RMAN
+scripts and commands for RMAN
+
